@@ -1,5 +1,5 @@
 //JS => number,string,null,undefined,object,boolean
-//TS => ...JS,any,never,unknown,enum,tuple
+//TS => ...JS,any,never,unknown,enum,tuple,union
 
 //Built in types:
 let price: number = 100_000;
@@ -86,3 +86,14 @@ const user3: {
   name: "mahdiyar",
   age: 23,
 };
+
+//union: (if you want different types you can use | as union)
+const printValue = (a: string | number) => {
+  if (typeof a === "string") {
+    console.log(a.toUpperCase());
+  } else {
+    console.log(a.toFixed());
+  }
+};
+printValue(1);
+printValue("one");
