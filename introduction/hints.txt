@@ -1,0 +1,11 @@
+tsc --init to initiate tsconfig.json
+tsc to compile selected directory files to ts or tsx
+
+tsconfig------->
+ target: define conversion method such as ES2015 ,ES2015,esnext,...
+ module: define import method in our converted files like commonJS
+ rootDir: define root directory for conversion
+ outDir: defined conversion directory for output files
+ removeComments: remove comments from js files
+ 
+ 
