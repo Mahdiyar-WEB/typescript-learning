@@ -97,3 +97,12 @@ const printValue = (a: string | number) => {
 };
 printValue(1);
 printValue("one");
+
+//literal: (we can define fixed values in literal types like enum)
+//*** use literal is better than enum values specially in functions props
+const printText = (text: string, align: "LEFT" | "RIGHT" | "CENTER") => {
+  console.log(text, align);
+};
+printText("text", "CENTER");
+printText("text", "LEFT");
+printText("text", "RIGHT");
