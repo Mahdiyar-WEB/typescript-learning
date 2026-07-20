@@ -54,3 +54,35 @@ enum StatusCodes {
 console.log(StatusCodes.OK); //return 200
 //in enum we can return key instead of value like this
 console.log(StatusCodes[200]); //return OK
+
+//Object
+const user1: {
+  id: number;
+  name: string;
+  age: number;
+} = {
+  id: 1,
+  name: "mahdiyar",
+  age: 23,
+};
+
+// if you want to declare age as optional value
+const user2: {
+  id: number;
+  name: string;
+  age?: number;
+} = {
+  id: 1,
+  name: "mahdiyar",
+};
+
+//if you want make id protected to prevent change in code use readonly before that
+const user3: {
+  readonly id: number;
+  name: string;
+  age: number;
+} = {
+  id: 1,
+  name: "mahdiyar",
+  age: 23,
+};
