@@ -25,3 +25,11 @@ products.map((product) => product.toUpperCase());
 //declare let and assign type to protect values
 let values: string[];
 values = ["test1", "test2"];
+
+//Tuple: (it works like array with this rules: a.fixed array length , b.multiple type array , c.order (index) type is important)
+const tupleArray: [string, number] = ["not found page", 404]; //whit this definition we can use ts intelligence in our usage
+tupleArray[0].split("");
+tupleArray[1].toFixed(0);
+
+//weakness of tuple is push method :(
+tupleArray.push("ok");
