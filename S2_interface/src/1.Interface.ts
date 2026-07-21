@@ -8,3 +8,16 @@ interface User {
 }
 
 //! interface cannot be used as primitives for variables
+
+// cannot use union or literal types inside interface, but we can combine two interface as union
+
+interface Diesel {
+  horsePower: number;
+}
+interface Hybrid {
+  type: string;
+}
+
+type Car = Diesel | Hybrid;
+//or
+let car: Diesel | Hybrid;
