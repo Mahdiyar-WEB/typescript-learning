@@ -54,3 +54,25 @@ const animalSound = (animal: Dog | Cat) => {
     animal.purr();
   }
 };
+
+// user defined type: not recommended because of complexity
+interface Fish {
+  swim(): void;
+}
+interface Bird {
+  fly(): void;
+}
+
+type Animal = Fish | Bird;
+
+const isFish = (animal: Animal): animal is Fish => {
+  return (animal as Fish).swim() !== undefined;
+};
+
+const checkAnimal = (animal: Animal) => {
+  if (isFish(animal)) {
+    console.log("animal is Fish");
+  } else {
+    console.log("animal is Bird");
+  }
+};
