@@ -21,3 +21,25 @@ interface Hybrid {
 type Car = Diesel | Hybrid;
 //or
 let car: Diesel | Hybrid;
+
+//interface for functions and difference with type
+type Add = (a: number, b: number) => number;
+
+interface Sum {
+  (a: number, b: number): number; //to define output type we should use : instead of =
+}
+
+//another example: (type alias is recommended for functions and interface recommended for objects and classes)
+interface Teacher {
+  name: string;
+  experienceAge: number;
+  calcSalary(): number;
+  speak(): void;
+}
+
+type Teacher1 = {
+  name: string;
+  experienceAge: number;
+  calcSalary: () => number;
+  speak: () => void;
+};
