@@ -55,7 +55,7 @@ const animalSound = (animal: Dog | Cat) => {
   }
 };
 
-// user defined type: not recommended because of complexity
+// user defined type with is operator: not recommended because of complexity
 interface Fish {
   swim(): void;
 }
@@ -76,3 +76,36 @@ const checkAnimal = (animal: Animal) => {
     console.log("animal is Bird");
   }
 };
+
+//discriminated union type: (combine union with literal types)
+//**cannot be used in complex types
+
+interface Circle1 {
+  radius: number;
+  type: "circle";
+}
+interface Rectangle1 {
+  width: number;
+  height: number;
+  type: "rectangle";
+}
+interface Square1 {
+  sideLength: number;
+  type: "square";
+}
+
+type Shape1 = Circle1 | Square1 | Rectangle1;
+
+const calcShapeArea1 = (shape: Shape1) => {
+  switch (shape.type) {
+    case "circle":
+      return Math.PI * shape.radius ** 2;
+    case "rectangle":
+      return shape.height * shape.width;
+    case "square":
+      shape.sideLength ** 2;
+    default:
+      return 0;
+  }
+};
+calcShapeArea1({ type: "circle", radius: 1 });
