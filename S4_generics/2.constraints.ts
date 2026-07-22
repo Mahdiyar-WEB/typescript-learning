@@ -20,3 +20,38 @@ const mergeObjects = <T extends object, U extends object>(obj1: T, obj2: U) => {
 };
 
 const mergedObjects = mergeObjects({ name: "mahdiyar" }, { age: 23 });
+
+//#sample 3:
+interface User {
+  name: string;
+  age: number;
+  email: string;
+  role: string;
+}
+
+interface Admin extends User {
+  access: boolean;
+}
+
+const checkAccess = <T extends User | Admin>(user: T) => {
+  if (user.role === "admin") {
+    console.log("you're admin");
+  } else {
+    console.log("you're user");
+  }
+};
+
+checkAccess({
+  name: "mahdiyar",
+  age: 23,
+  email: "test@gamil.com",
+  role: "user",
+});
+
+checkAccess({
+  name: "mahdiyar",
+  age: 23,
+  email: "test@gamil.com",
+  role: "user",
+  access: true,
+});
