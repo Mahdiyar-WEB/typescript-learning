@@ -40,5 +40,7 @@ type PersonWithEmailAndName1 = Pick<Person, "email" | "name">;
 
 const personWithEmailAndName: PersonWithEmailAndName = { email: "", name: "" };
 
-
-
+//multiple utility:
+type PartialPickPerson = Partial<Pick<Person, "age" | "email">>;
+//or
+interface PartialPickPerson1 extends Partial<Pick<Person, "age" | "email">> {}
