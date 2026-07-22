@@ -44,3 +44,35 @@ const personWithEmailAndName: PersonWithEmailAndName = { email: "", name: "" };
 type PartialPickPerson = Partial<Pick<Person, "age" | "email">>;
 //or
 interface PartialPickPerson1 extends Partial<Pick<Person, "age" | "email">> {}
+
+//5.record: (create new object with defined keys and the desired type or interface)
+interface School extends Record<"teacher" | "manager", Person> {}
+//or
+type School1 = Record<"teacher" | "manager", Person>;
+
+const schoolEmploys: School = {
+  manager: {
+    age: 55,
+    email: "manager@gmail.com",
+    name: "manager name",
+  },
+  teacher: {
+    age: 42,
+    email: "teacher@gmail.com",
+    name: "teacher name",
+  },
+};
+
+//6.readonly: (create new type or interface based on another type or interface with readonly properties)
+
+interface ReadonlyPerson extends Readonly<Person> {}
+//or
+type ReadonlyPerson1 = Readonly<Person>;
+
+const readonlyPerson: ReadonlyPerson = {
+  age: 20,
+  name: "test",
+  email: "test@gmail.com",
+};
+
+readonlyPerson.age = 23;
