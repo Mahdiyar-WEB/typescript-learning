@@ -55,3 +55,18 @@ checkAccess({
   role: "user",
   access: true,
 });
+
+//*** keyof constraints: (when you have 2 placeholder and one of them is the property of another one)
+
+const getProperty = <T extends object, U extends keyof T>(obj: T, key: U) => {
+  return obj[key];
+};
+
+const client = {
+  name: "mahdiyar",
+  age: 23,
+  stack: "Front-end",
+};
+
+getProperty(client,"stack")
+getProperty(client,"age")
