@@ -1,6 +1,6 @@
-import TaskHeader from "@/components/TaskHeader";
-import TasksList from "@/components/TasksList";
-import User from "@/components/User";
+import TaskHeader from "@/components/props/TaskHeader";
+import TasksList from "@/components/props/TasksList";
+import User from "@/components/props/User";
 
 export default function Home() {
   return (
