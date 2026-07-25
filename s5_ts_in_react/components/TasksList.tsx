@@ -7,7 +7,7 @@ type TasksListProps = {
   tasks: Task[];
 };
 
-export default function TasksList({ tasks }: TasksListProps) {
+const TasksList: React.FC<TasksListProps> = ({ tasks }) => {
   return (
     <ul className="p-5 mx-auto w-fit rounded-xl bg-gray-100 space-y-2">
       {tasks.map(({ completed, title }) => {
@@ -19,4 +19,6 @@ export default function TasksList({ tasks }: TasksListProps) {
       })}
     </ul>
   );
-}
+};
+
+export default TasksList;
