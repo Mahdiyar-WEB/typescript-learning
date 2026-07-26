@@ -1,6 +1,7 @@
 import TaskHeader from "@/components/props/TaskHeader";
 import TasksList from "@/components/props/TasksList";
 import User from "@/components/props/User";
+import Account from "@/components/state/Account";
 import Note from "@/components/state/Note";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         ]}
       />
       <Note />
+      <Account />
     </main>
   );
 }
