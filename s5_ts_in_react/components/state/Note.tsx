@@ -5,7 +5,11 @@ const Note = () => {
   const [note, setNote] = useState("");
   const [notes, setNotes] = useState<string[]>([]);
 
-  const handleAddNote = () => {
+  const handleAddNote = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>, // to define event type just hover on element handler to receive type
+  ) => {
+    console.log(e);
+
     setNote("");
     setNotes((prevNotes) => [...prevNotes, note]);
   };
@@ -13,8 +17,8 @@ const Note = () => {
   return (
     <div className="border flex flex-col justify-center items-center gap-5 w-fit px-5 py-3 mx-auto mt-5 rounded-md">
       <ul>
-        {notes.map((note) => {
-          return <li key={note}>{note}</li>;
+        {notes.map((note, index) => {
+          return <li key={index}>{note}</li>;
         })}
       </ul>
       <input
@@ -26,7 +30,7 @@ const Note = () => {
       />
       <button
         className="border border-gray-400 px-3 py-2 rounded-md"
-        onClick={() => handleAddNote()}
+        onClick={handleAddNote}
       >
         add note
       </button>
