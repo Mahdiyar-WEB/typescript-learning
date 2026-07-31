@@ -1,8 +1,8 @@
 import TaskHeader from "@/components/props/TaskHeader";
 import TasksList from "@/components/props/TasksList";
 import User from "@/components/props/User";
-import Account from "@/components/state/Account";
-import Note from "@/components/state/Note";
+import Account from "@/components/react_hooks/state/Account";
+import Note from "@/components/react_hooks/state/Note";
 
 export default function Home() {
   return (
