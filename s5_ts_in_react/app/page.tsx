@@ -1,3 +1,4 @@
+import GenericProps from "@/components/props/GenericProps";
 import TaskHeader from "@/components/props/TaskHeader";
 import TasksList from "@/components/props/TasksList";
 import User from "@/components/props/User";
@@ -18,6 +19,7 @@ export default function Home() {
       />
       <Note />
       <Account />
+      <GenericProps items={[{ id: 1 }]} onClick={(id) => console.log(id)} />
     </main>
   );
 }
