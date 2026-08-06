@@ -4,6 +4,8 @@ import TasksList from "@/components/props/TasksList";
 import User from "@/components/props/User";
 import Account from "@/components/react_hooks/state/Account";
 import Note from "@/components/react_hooks/state/Note";
+import Dashboard from "@/components/wrapper/Dashboard";
+import Wrapper from "@/components/wrapper/Wrapper";
 
 export default function Home() {
   return (
@@ -20,6 +22,7 @@ export default function Home() {
       <Note />
       <Account />
       <GenericProps items={[{ id: 1 }]} onClick={(id) => console.log(id)} />
+      <Wrapper isLoggedIn Component={Dashboard} />
     </main>
   );
 }
