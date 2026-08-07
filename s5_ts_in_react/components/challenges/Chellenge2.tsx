@@ -22,4 +22,9 @@ const Parent = () => {
   );
 };
 
+//**Scenarios:
+//<Accordion />
+//<Accordion collapsed />
+//<Accordion expanded />
+
 export default Parent;
