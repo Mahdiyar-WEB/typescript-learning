@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, useState } from "react";
 
 type Base = {
   value: string;
@@ -9,7 +9,6 @@ type Props<T> = {
   options: T[];
   onChange: (value: T) => void;
 };
-
 
 const Select = <T extends Base>({ options, onChange }: Props<T>) => {
   const selectHandler = (
@@ -44,28 +43,33 @@ type Movie = {
   releaseDate: string;
 };
 
-const Parent = () => {
-  const bookOptions = [
-    { value: "1", label: "book1", author: "mahdiyar" },
-    { value: "2", label: "book2", author: "mahdiyar" },
-  ];
+const bookOptions = [
+  { value: "1", label: "book1", author: "mahdiyar" },
+  { value: "2", label: "book2", author: "mahdiyar" },
+];
 
-  const movieOptions = [
-    { value: "1", label: "movie1", releaseDate: "2026-10-08" },
-    { value: "2", label: "movie2", releaseDate: "2026-10-08" },
-  ];
+const movieOptions = [
+  { value: "1", label: "movie1", releaseDate: "2026-10-08" },
+  { value: "2", label: "movie2", releaseDate: "2026-10-08" },
+];
+
+const Parent = () => {
+  const [book, setBook] = useState<Book | null>(null);
+  const [movie, setMovie] = useState<Movie | null>(null);
 
   const bookSelectHandler = (value: Book) => {
-    console.log(value);
+    setBook(value);
   };
 
   const movieSelectHandler = (value: Movie) => {
-    console.log(value);
+    setMovie(value);
   };
 
   return (
     <div>
+      <p>Selected Book is: {book?.label}</p>
       <Select options={bookOptions} onChange={bookSelectHandler} />
+      <p>Selected Movie is: {movie?.label}</p>
       <Select options={movieOptions} onChange={movieSelectHandler} />
     </div>
   );
